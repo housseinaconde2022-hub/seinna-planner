@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Seinna Planner</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="crown">♕</span>
+                <h1>Seinna Planner</h1>
+                <span class="heart">♥</span>
+            </div>
+            <p class="tagline">Rêve • Organise • Brille ♥</p>
+        </header>
+
+        <!-- Main Grid -->
+        <main class="grid">
+            <!-- Profil -->
+            <section class="card profil">
+                <div class="avatar">
+                    <div class="avatar-placeholder">S</div>
+                </div>
+                <h2>Seinna</h2>
+                <p class="motto">Rêve • Organise • Brille ♥</p>
+            </section>
+
+            <!-- Calendrier -->
+            <section class="card calendrier">
+                <div class="card-header">
+                    <span class="bow">🎀</span>
+                    <h3>Mon Calendrier ♥</h3>
+                </div>
+                <div class="month-nav">
+                    <button id="prevMonth">‹</button>
+                    <span id="currentMonth">Novembre 2026</span>
+                    <button id="nextMonth">›</button>
+                </div>
+                <div class="weekdays">
+                    <span>Lun</span><span>Mar</span><span>Mer</span><span>Jeu</span><span>Ven</span><span>Sam</span><span>Dim</span>
+                </div>
+                <div class="days" id="calendarDays"></div>
+                <div class="rdv">
+                    <p>Mes Prochains RDV ♥</p>
+                    <div class="rdv-item">📅 Sam. 8 Nov. — Baby-sitting ♥</div>
+                </div>
+            </section>
+
+            <!-- Planning -->
+            <section class="card planning">
+                <div class="card-header">
+                    <span class="bow">🎀</span>
+                    <h3>Mon Planning ♥</h3>
+                </div>
+                <div class="tabs">
+                    <button class="active">Jour</button>
+                    <button>Semaine</button>
+                    <button>Mois</button>
+                </div>
+                <div class="timeline" id="timeline">
+                    <!-- Rempli par JS -->
+                </div>
+            </section>
+
+            <!-- To-Do -->
+            <section class="card todo">
+                <div class="card-header">
+                    <span class="bow">🎀</span>
+                    <h3>Mes To-Do ♥</h3>
+                </div>
+                <ul id="todoList">
+                    <li><input type="checkbox"> Réviser mes cours</li>
+                    <li><input type="checkbox"> Faire du sport</li>
+                    <li><input type="checkbox"> Prendre soin de ma peau</li>
+                    <li><input type="checkbox"> Créer du contenu IG</li>
+                    <li><input type="checkbox"> Lire un livre ♥</li>
+                    <li><input type="checkbox"> Préparer mes affaires</li>
+                    <li><input type="checkbox"> Boire de l'eau</li>
+                    <li><input type="checkbox"> Être heureuse ♥</li>
+                </ul>
+            </section>
+
+            <!-- Habitudes -->
+            <section class="card habits">
+                <div class="card-header">
+                    <span class="bow">🎀</span>
+                    <h3>Habitudes ♥</h3>
+                </div>
+                <div class="habit-days">L M M J V S D</div>
+                <ul class="habit-list">
+                    <li>💧 Boire de l'eau <span class="hearts">♥♥♥</span></li>
+                    <li>🏋️ Faire du sport <span class="hearts">♥♥</span></li>
+                    <li>🧘 Méditation / Yoga <span class="hearts">♥</span></li>
+                    <li>🧴 Ma skincare <span class="hearts">♥♥♥</span></li>
+                    <li>📚 Lire <span class="hearts">♥♥</span></li>
+                    <li>😊 Être positive ♥ <span class="hearts">♥♥♥</span></li>
+                </ul>
+                <p class="encouragement">Tu es incroyable ♥</p>
+            </section>
+
+            <!-- Notes -->
+            <section class="card notes">
+                <div class="card-header">
+                    <span class="bow">🎀</span>
+                    <h3>Mes Notes ♥</h3>
+                </div>
+                <div class="note-tabs">
+                    <button class="active">Toutes</button>
+                    <button>Études</button>
+                    <button>Beauté</button>
+                    <button>Autre</button>
+                </div>
+                <div class="note-list">
+                    <div class="note">♥ Idées Instagram ♥ <small>Aujourd'hui, 10:24</small></div>
+                    <div class="note">♥ Recette savon naturel ♥ <small>Hier, 19:16</small></div>
+                    <div class="note">♥ Projets futurs ♥ <small>Hier, 14:32</small></div>
+                    <div class="note">♥ Petits mots doux ♥ <small>10/11/2026</small></div>
+                </div>
+            </section>
+
+            <!-- Santé -->
+            <section class="card sante">
+                <div class="card-header">
+                    <span class="bow">🎀</span>
+                    <h3>Ma Santé ♥</h3>
+                </div>
+                <div class="sante-tabs">
+                    <button class="active">Cycle</button>
+                    <button>Poids</button>
+                    <button>Sommeil</button>
+                </div>
+                <div class="cycle-info">
+                    <p>Mon cycle ♥</p>
+                    <p class="next-period">Prochaines règles ≈ 25 Nov. ♥</p>
+                    <button class="btn-cycle">Voir mon cycle ›</button>
+                </div>
+                <div class="stats">
+                    <div class="stat">
+                        <span>⚖️</span>
+                        <p>Mon poids</p>
+                        <strong>56 kg</strong>
+                    </div>
+                    <div class="stat">
+                        <span>🌙</span>
+                        <p>Mon sommeil</p>
+                        <strong>7h30</strong>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Self Care -->
+            <section class="card selfcare">
+                <div class="card-header">
+                    <span class="bow">🎀</span>
+                    <h3>Self Care ♥</h3>
+                </div>
+                <ul>
+                    <li><input type="checkbox"> Soins visage</li>
+                    <li><input type="checkbox"> Masque visage</li>
+                    <li><input type="checkbox"> Hydratation</li>
+                    <li><input type="checkbox"> Routine cheveux</li>
+                    <li><input type="checkbox"> Bain relaxant</li>
+                    <li><input type="checkbox"> Faire une activité que j'aime ♥</li>
+                </ul>
+                <p class="message">Prends soin de toi, tu le mérites ♥</p>
+            </section>
+
+            <!-- Objectifs -->
+            <section class="card objectifs">
+                <div class="card-header">
+                    <span class="bow">🎀</span>
+                    <h3>Mes Objectifs ♥</h3>
+                </div>
+                <ul>
+                    <li><input type="checkbox"> Réussir mes études</li>
+                    <li><input type="checkbox"> Être indépendante</li>
+                    <li><input type="checkbox"> Voyager ✈</li>
+                    <li><input type="checkbox"> Me sentir bien dans mon corps</li>
+                    <li><input type="checkbox"> Construire ma vie de rêve ♥</li>
+                </ul>
+                <div class="progress">
+                    <div class="bar" style="width: 0%"></div>
+                    <span>0%</span>
+                </div>
+            </section>
+
+            <!-- Budget -->
+            <section class="card budget">
+                <div class="card-header">
+                    <span class="bow">🎀</span>
+                    <h3>Mon Budget ♥</h3>
+                </div>
+                <p class="depenses">Dépenses du mois : <strong>0 €</strong></p>
+                <button class="btn-add">+ Ajouter une dépense</button>
+                <p class="empty">Aucune dépense pour le moment ♥</p>
+            </section>
+
+            <!-- Mood -->
+            <section class="card mood">
+                <div class="card-header">
+                    <span class="bow">🎀</span>
+                    <h3>Mon Mood ♥</h3>
+                </div>
+                <div class="moods">
+                    <button>😊 Heureuse</button>
+                    <button>😌 Calme</button>
+                    <button>😩 Fatiguée</button>
+                    <button>😢 Triste</button>
+                    <button>😰 Stressée</button>
+                    <button>🥰 Amoureuse</button>
+                </div>
+            </section>
+
+            <!-- Message final -->
+            <section class="card message-final">
+                <p>Crois en toi,<br><strong>Seinna ♥</strong></p>
+            </section>
+        </main>
+
+        <!-- Navigation bas -->
+        <nav class="bottom-nav">
+            <button class="active"><span>🏠</span>Accueil</button>
+            <button><span>📅</span>Calendrier</button>
+            <button><span>⭐</span>Explorer</button>
+            <button><span>📊</span>Progrès</button>
+            <button><span>⚙️</span>Paramètres</button>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
